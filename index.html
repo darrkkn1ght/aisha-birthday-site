@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Belated Birthday, Aisha! 🌸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 30%, #2d1b2e 70%, #4a1a4a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sparkle Animation */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff69b4, #ffc0cb, #ffffff);
+            border-radius: 50%;
+            animation: sparkle 2s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(255, 192, 203, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .belated-badge {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .name {
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 200;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ff69b4, #ffc0cb, #ffffff, #ff69b4);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .age {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: #ffc0cb;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            text-shadow: 0 0 20px rgba(255, 192, 203, 0.6);
+        }
+
+        .date {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #cccccc;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .intro-text {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            max-width: 700px;
+            margin: 0 auto;
+            color: #e0e0e0;
+            line-height: 1.9;
+        }
+
+        /* Photo Gallery */
+        .photo-section {
+            padding: 120px 0;
+            text-align: center;
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 192, 203, 0.05) 50%, transparent 100%);
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(45deg, #ff69b4, #ffc0cb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4rem;
+            font-weight: 200;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .photo-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .photo-container:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 35px 70px rgba(255, 105, 180, 0.5);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ffc0cb 50%, #ff1493 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .photo-caption {
+            color: #ffc0cb;
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Apology Section */
+        .apology-section {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .apology-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 192, 203, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 192, 203, 0.3);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 0 auto;
+            max-width: 800px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apology-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 192, 203, 0.1) 20%, transparent 20%);
+            background-size: 20px 20px;
+            animation: float 20s linear infinite;
+        }
+
+        .apology-text {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            color: #f0f0f0;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .signature {
+            font-size: 1.3rem;
+            color: #ff69b4;
+            font-style: italic;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Love Popup */
+        .love-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            padding: 3rem;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            box-shadow: 0 30px 60px rgba(255, 105, 180, 0.6);
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .love-popup.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .love-popup .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .love-popup .close-btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            color: #ffc0cb;
+            font-size: 2rem;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .element-1 { top: 15%; left: 8%; animation-delay: 0s; }
+        .element-2 { top: 70%; right: 10%; animation-delay: 2s; }
+        .element-3 { bottom: 25%; left: 15%; animation-delay: 4s; }
+        .element-4 { top: 40%; right: 20%; animation-delay: 6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-3deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile First Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 1.5rem 0;
+                min-height: 90vh;
+            }
+
+            .belated-badge {
+                padding: 6px 15px;
+                font-size: 0.75rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .name {
+                font-size: 2.2rem;
+                letter-spacing: 1px;
+                line-height: 1.1;
+                margin-bottom: 0.8rem;
+            }
+
+            .age {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .date {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+                line-height: 1.6;
+                padding: 0 10px;
+            }
+
+            .photo-section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .photo-placeholder {
+                height: 280px;
+                font-size: 1.1rem;
+            }
+
+            .photo-caption {
+                font-size: 0.95rem;
+                margin-top: 0.8rem;
+            }
+
+            .apology-section {
+                padding: 80px 0;
+            }
+
+            .apology-card {
+                padding: 2rem;
+                margin: 0 10px;
+                border-radius: 20px;
+            }
+
+            .apology-text {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin-bottom: 1.5rem;
+            }
+
+            .signature {
+                font-size: 1.1rem;
+            }
+
+            .love-popup {
+                padding: 1.5rem;
+                font-size: 1.3rem;
+                margin: 0 15px;
+                border-radius: 20px;
+                width: calc(100% - 30px);
+                max-width: 350px;
+            }
+
+            .love-popup .close-btn {
+                top: 10px;
+                right: 15px;
+                font-size: 1.3rem;
+            }
+
+            .floating-element {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+                min-height: 95vh;
+            }
+
+            .name {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+
+            .age {
+                font-size: 1.8rem;
+            }
+
+            .date {
+                font-size: 1.2rem;
+            }
+
+            .intro-text {
+                font-size: 1.1rem;
+                max-width: 600px;
+            }
+
+            .photo-section {
+                padding: 100px 0;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+                margin-bottom: 3rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .photo-placeholder {
+                height: 320px;
+            }
+
+            .apology-section {
+                padding: 100px 0;
+            }
+
+            .apology-card {
+                padding: 3rem;
+                margin: 0 20px;
+            }
+
+            .apology-text {
+                font-size: 1.2rem;
+                line-height: 1.8;
+            }
+
+            .signature {
+                font-size: 1.2rem;
+            }
+
+            .love-popup {
+                padding: 2.5rem;
+                font-size: 1.8rem;
+                max-width: 450px;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 769px) {
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .hero-content {
+                padding: 0 2rem;
+            }
+
+            .intro-text {
+                max-width: 700px;
+            }
+
+            .apology-card {
+                max-width: 800px;
+            }
+        }
+
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1400px;
+            }
+
+            .name {
+                font-size: 6rem;
+            }
+
+            .age {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 3.5rem;
+            }
+
+            .photo-gallery {
+                max-width: 900px;
+            }
+
+            .apology-text {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .photo-container:hover {
+                transform: none;
+            }
+
+            .photo-container:active {
+                transform: translateY(-10px) scale(1.02);
+            }
+
+            .love-popup .close-btn:hover {
+                transform: none;
+            }
+
+            .love-popup .close-btn:active {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Landscape phone optimization */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: 100vh;
+                padding: 1rem 0;
+            }
+
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .intro-text {
+                font-size: 0.95rem;
+            }
+
+            .photo-section, .apology-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-element element-1">🌸</div>
+    <div class="floating-element element-2">💖</div>
+    <div class="floating-element element-3">✨</div>
+    <div class="floating-element element-4">🎀</div>
+
+    <!-- Love Popup -->
+    <div class="love-popup" id="lovePopup">
+        <button class="close-btn" onclick="closeLovePopup()">&times;</button>
+        <div>You're Amazing, Aisha! ✨</div>
+        <div style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">
+            You deserve all the happiness in the world 🌸
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="belated-badge">🎉 Belated Birthday Surprise! 🎉</div>
+                <h1 class="name">Yahaya Aisha Teni</h1>
+                <p class="age">Nineteen & Absolutely Stunning</p>
+                <p class="date">June 6th, 2025</p>
+                <p class="intro-text">
+                    Even though this comes a day late, my love for you is always on time. 
+                    You deserve to be celebrated every single day, beautiful soul. ✨
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-section">
+        <div class="container">
+            <h2 class="section-title">Your Beautiful Moments</h2>
+            <div class="photo-gallery">
+                <div class="photo-container">
+                    <img src="aisha1.png" alt="Aisha's Beautiful Photo" class="photo-placeholder" style="width: 100%; height: 350px; object-fit: cover; display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+                    <div class="photo-placeholder">
+                        Your first beautiful photo goes here! 📸✨
+                    </div>
+                    <p class="photo-caption">"I think it's cute" - and we think you're absolutely gorgeous 💕</p>
+                </div>
+                <div class="photo-container">
+                    <img src="aisha2.png" alt="Aisha's Second Beautiful Photo" class="photo-placeholder" style="width: 100%; height: 350px; object-fit: cover; display: none;" onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+                    <div class="photo-placeholder">
+                        Your second stunning photo goes here! 📸✨
+                    </div>
+                    <p class="photo-caption">Another moment of your beautiful radiance ✨</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apology & Love Section -->
+    <section class="apology-section">
+        <div class="container">
+            <div class="apology-card">
+                <p class="apology-text">
+                    My Dearest Aisha,<br><br>
+                    I owe you the biggest apology. I know I haven't been talking to you like I should, 
+                    and I'm truly sorry for that. Life got in the way, but that's no excuse for not 
+                    being there for someone as special as you.<br><br>
+                    
+                    I hope this little surprise can be the beginning of making it up to you. 
+                    You deserve so much more than belated wishes and distant conversations. 
+                    You deserve daily reminders of how incredible and valued you are.<br><br>
+                    
+                    Your quiet strength, your beautiful authenticity, and your gentle heart make you 
+                    one of the most amazing people I know. I promise to do better, to be more present, 
+                    and to make sure you never doubt how much you're appreciated.<br><br>
+                    
+                    Happy 19th Birthday, beautiful soul. Here's to new beginnings, deeper friendships, 
+                    and all the joy you deserve. 🌸
+                </p>
+                <p class="signature">With all my care and friendship 🌸</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 300);
+
+        // Show love popup after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('lovePopup').classList.add('show');
+            }, 3000);
+        });
+
+        // Close love popup
+        function closeLovePopup() {
+            document.getElementById('lovePopup').classList.remove('show');
+        }
+
+        // Enhanced mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            const elements = document.querySelectorAll('.floating-element');
+            elements.forEach((element, index) => {
+                const speed = (index + 1) * 0.02;
+                const x = (e.clientX * speed);
+                const y = (e.clientY * speed);
+                element.style.transform += ` translate(${x * 0.05}px, ${y * 0.05}px)`;
+            });
+        });
+
+        // Smooth scroll
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Random encouraging popup trigger
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                const popup = document.getElementById('lovePopup');
+                const messages = [
+                    { main: "You're Amazing, Aisha! ✨", sub: "You deserve all the happiness in the world 🌸" },
+                    { main: "You're So Special! 💫", sub: "Never forget how incredible you are ✨" },
+                    { main: "Aisha, You're Wonderful! 🌟", sub: "Your beauty shines from within 🌸" },
+                    { main: "You Matter So Much! 💖", sub: "The world is brighter with you in it ✨" },
+                    { main: "Keep Being Amazing! 🌺", sub: "You inspire everyone around you 💫" }
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                popup.children[1].textContent = randomMessage.main;
+                popup.children[2].textContent = randomMessage.sub;
+                popup.classList.add('show');
+                setTimeout(() => popup.classList.remove('show'), 3000);
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
